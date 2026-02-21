@@ -103,7 +103,7 @@ export default function MissionControlPage() {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <Card icon={Wifi} label="Gateway" value={connected ? 'Connected' : 'Disconnected'} sub={connected ? `Uptime: ${uptimeStr}` : undefined} ok={connected} />
         <Card icon={Radio} label="Channels" value={`${channels.length}`} sub={`${channels.filter(([, v]: any) => v.running).length} active`} ok={channels.some(([, v]: any) => v.running)} />
-        <Card icon={Users} label="Sessions" value={health?.sessions?.toString() ?? '—'} ok />
+        <Card icon={Users} label="Sessions" value={health?.sessions?.count?.toString() ?? '—'} ok />
         <Card icon={Bot} label="Agent" value={health?.agentId ?? 'main'} ok />
       </div>
 
