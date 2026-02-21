@@ -3,7 +3,7 @@
 **OpenClaw for everyone.** You shouldn't need a terminal to run AI agents. VirtuSoul Studio is a full visual dashboard for [OpenClaw](https://github.com/openclaw/openclaw) — install it, set a password, and manage everything from your browser. Built for non-technical users who want the power of OpenClaw without touching the command line.
 
 <!-- SCREENSHOT -->
-![VirtuSoul Studio](https://via.placeholder.com/900x500?text=Screenshot+Coming+Soon)
+![VirtuSoul Studio — Mission Control](docs/screenshots/mission-control.png)
 <!-- /SCREENSHOT -->
 
 ## One-Command Install
@@ -30,11 +30,17 @@ ChatGPT-style interface with streaming responses, tool call visualization, and t
 ### 🛡️ Mission Control
 Real-time system health dashboard showing STABLE/DRIFTING/ALERT status. Start, stop, and restart the OpenClaw Gateway directly from the UI.
 
+![Mission Control](docs/screenshots/mission-control.png)
+
 ### 🛠️ Agent Manager
 Create and delete agents, edit SOUL.md prompts inline, search and reindex agent memory, upload files to agent workspaces — all from one page.
 
 ### 📡 Channel Manager
 Connect your agents to Telegram, WhatsApp, Discord, Slack, Signal, Matrix, and 12+ more platforms. Enable/disable channels with a toggle.
+
+![Channel Manager](docs/screenshots/channels.png)
+
+![WhatsApp QR Setup](docs/screenshots/whatsapp-qr.png)
 
 ### 🤖 Model Manager
 List all available models, set the default, scan for newly added models. See which models are active and switch between them instantly.
@@ -45,11 +51,15 @@ Browse, install, and configure Model Context Protocol servers. Extend your agent
 ### ⚡ Skills Manager
 Install and set up agent skills (tools, integrations, APIs). Handles package installation and environment variable configuration through the UI.
 
+![Skills Manager](docs/screenshots/skills-manager.png)
+
 ### 🪝 Hooks Manager
 Create and manage event hooks that trigger actions when specific events occur in your OpenClaw setup.
 
 ### 🌐 Browser Manager
 Manage headless browser instances for agents that need web browsing capabilities.
+
+![Browser Manager](docs/screenshots/browser-manager.png)
 
 ### 👁️ Observability
 Trace every API call, WebSocket message, and CLI command. Filter by type, status, and duration to debug issues fast.
@@ -57,14 +67,20 @@ Trace every API call, WebSocket message, and CLI command. Filter by type, status
 ### 🧠 Graph Memory
 Visualize and explore your agents' knowledge graph. See how memory nodes connect and search across the entire memory store.
 
+![Graph Memory](docs/screenshots/graph-memory.png)
+
 ### 🎛️ Memory Tuning
 Fine-tune how your agents store and retrieve memories. Adjust relevance thresholds, decay rates, and retrieval strategies.
+
+![Memory Tuning](docs/screenshots/memory-tuning.png)
 
 ### ✅ Exec Approvals
 When agents want to run commands, approve or reject them from the UI. In-chat approval cards show the command, working directory, and a countdown timer.
 
 ### ✨ Text Selection Actions
 Select any text in a chat message and get instant actions: Explain, Simplify, Deep Dive, Translate, or Bookmark.
+
+![Slash Commands](docs/screenshots/slash-commands.png)
 
 ### 🔖 Bookmarks
 Save important messages and text selections. Browse and search your bookmarks across all conversations.
@@ -87,11 +103,15 @@ Approve or reject new device connections. Control which devices can access your 
 ### 📁 Workspace Browser
 Browse and edit files in your agents' workspaces directly from the browser.
 
+![Workspace Editor](docs/screenshots/workspace-editor.png)
+
 ### ⚙️ Config Editor
 View and edit your OpenClaw configuration with sensitive fields automatically masked. No more hand-editing JSON.
 
 ### 💻 Web Terminal
 Run any `openclaw` CLI command from the browser. Full terminal output with streaming.
+
+![Web Terminal](docs/screenshots/web-terminal.png)
 
 ### 🔒 API Middleware
 The browser never talks to OpenClaw directly. All communication is proxied through the VirtuSoul API with session authentication.
