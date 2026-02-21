@@ -18,10 +18,14 @@ export interface GatewaySession {
   lastMessagePreview?: string
 }
 
+// Module-level cache so chat survives navigation
+let cachedMessages: ChatMessage[] = []
+let cachedSessions: GatewaySession[] = []
+
 export function useChat() {
-  const [messages, setMessages] = useState<ChatMessage[]>([])
+  const [messages, _setMessages] = useState<ChatMessage[]>(cachedMessages)
   const [isGenerating, setIsGenerating] = useState(false)
-  const [sessions, setSessions] = useState<GatewaySession[]>([])
+  const [sessions, _setSessions] = useState<GatewaySession[]>(cachedSessions)
   const [activeSession, setActiveSession] = useState<string>(() =>
     localStorage.getItem('vs_active_session') || 'agent:main:main'
   )
@@ -30,8 +34,23 @@ export function useChat() {
   const streamStartRef = useRef<number | null>(null)
   const isGeneratingRef = useRef(false)
   const [queue, setQueue] = useState<{ text: string; attachments?: any[] }[]>([])
-  const historyLoadedRef = useRef(false)
+  const historyLoadedRef = useRef(cachedMessages.length > 0)
   const conversationCreatedRef = useRef<Set<string>>(new Set())
+
+  const setMessages: typeof _setMessages = (action) => {
+    _setMessages(prev => {
+      const next = typeof action === 'function' ? action(prev) : action
+      cachedMessages = next
+      return next
+    })
+  }
+  const setSessions: typeof _setSessions = (action) => {
+    _setSessions(prev => {
+      const next = typeof action === 'function' ? action(prev) : action
+      cachedSessions = next
+      return next
+    })
+  }
 
   useEffect(() => {
     activeSessionRef.current = activeSession
