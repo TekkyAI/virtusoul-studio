@@ -35,6 +35,8 @@ Real-time system health dashboard showing STABLE/DRIFTING/ALERT status. Start, s
 ### 🛠️ Agent Manager
 Create and delete agents, edit SOUL.md prompts inline, search and reindex agent memory, upload files to agent workspaces — all from one page.
 
+![Agent Manager](docs/screenshots/agent-manager.png)
+
 ### 📡 Channel Manager
 Connect your agents to Telegram, WhatsApp, Discord, Slack, Signal, Matrix, and 12+ more platforms. Enable/disable channels with a toggle.
 
@@ -45,8 +47,12 @@ Connect your agents to Telegram, WhatsApp, Discord, Slack, Signal, Matrix, and 1
 ### 🤖 Model Manager
 List all available models, set the default, scan for newly added models. See which models are active and switch between them instantly.
 
+![Model Manager](docs/screenshots/models.png)
+
 ### 🧩 MCP Manager
 Browse, install, and configure Model Context Protocol servers. Extend your agents' capabilities with external tools and data sources.
+
+![MCP Manager](docs/screenshots/mcp-servers.png)
 
 ### ⚡ Skills Manager
 Install and set up agent skills (tools, integrations, APIs). Handles package installation and environment variable configuration through the UI.
@@ -56,6 +62,8 @@ Install and set up agent skills (tools, integrations, APIs). Handles package ins
 ### 🪝 Hooks Manager
 Create and manage event hooks that trigger actions when specific events occur in your OpenClaw setup.
 
+![Hooks Manager](docs/screenshots/hooks.png)
+
 ### 🌐 Browser Manager
 Manage headless browser instances for agents that need web browsing capabilities.
 
@@ -63,6 +71,8 @@ Manage headless browser instances for agents that need web browsing capabilities
 
 ### 👁️ Observability
 Trace every API call, WebSocket message, and CLI command. Filter by type, status, and duration to debug issues fast.
+
+![Observability](docs/screenshots/observability.png)
 
 ### 🧠 Graph Memory
 Visualize and explore your agents' knowledge graph. See how memory nodes connect and search across the entire memory store.
@@ -77,6 +87,8 @@ Fine-tune how your agents store and retrieve memories. Adjust relevance threshol
 ### ✅ Exec Approvals
 When agents want to run commands, approve or reject them from the UI. In-chat approval cards show the command, working directory, and a countdown timer.
 
+![Approvals](docs/screenshots/approvals.png)
+
 ### ✨ Text Selection Actions
 Select any text in a chat message and get instant actions: Explain, Simplify, Deep Dive, Translate, or Bookmark.
 
@@ -85,20 +97,30 @@ Select any text in a chat message and get instant actions: Explain, Simplify, De
 ### 🔖 Bookmarks
 Save important messages and text selections. Browse and search your bookmarks across all conversations.
 
+![Bookmarks](docs/screenshots/bookmarks.png)
+
 ### 🔍 Search
 Cmd+K instant search across all conversations and messages. Find anything you've ever discussed.
 
 ### 📊 Token Usage
 Track token consumption per session with cost estimates. Know exactly what your agents are spending.
 
+![Token Usage](docs/screenshots/token-usage.png)
+
 ### 📋 Activity Timeline
 Chronological log of every event — agent actions, approvals, errors, cron runs. Filter by type to find what you need.
+
+![Activity](docs/screenshots/activity.png)
 
 ### ⏰ Cron Manager
 Create, edit, delete, and manually trigger scheduled jobs. Your agents can run tasks on autopilot.
 
+![Cron Jobs](docs/screenshots/cron-jobs.png)
+
 ### 📱 Device Pairing
 Approve or reject new device connections. Control which devices can access your OpenClaw setup.
+
+![Devices](docs/screenshots/devices.png)
 
 ### 📁 Workspace Browser
 Browse and edit files in your agents' workspaces directly from the browser.
@@ -107,6 +129,8 @@ Browse and edit files in your agents' workspaces directly from the browser.
 
 ### ⚙️ Config Editor
 View and edit your OpenClaw configuration with sensitive fields automatically masked. No more hand-editing JSON.
+
+![Config Editor](docs/screenshots/config.png)
 
 ### 💻 Web Terminal
 Run any `openclaw` CLI command from the browser. Full terminal output with streaming.
