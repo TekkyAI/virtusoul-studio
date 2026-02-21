@@ -153,7 +153,7 @@ function ChannelTile({ def, enabled, running, configured, accounts, onToggle, on
   const { exec, running: busy } = useCliExec()
 
   const toggle = async () => {
-    await exec(`plugins ${enabled ? 'disable' : 'enable'} ${def.pluginId}`, { onDone: onToggle })
+    await exec(`plugins ${enabled ? 'disable' : 'enable'} ${def.pluginId}`, { onDone: () => setTimeout(onToggle, 500) })
   }
 
   return (
