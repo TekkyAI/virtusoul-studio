@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+/* Hide scrollbars globally */
+* {
+  scrollbar-width: none;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+
+@font-face {
+  font-family: "HarmonyOS Sans";
+  src: url("/fonts/HarmonyOS_Sans_Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HarmonyOS Sans";
+  src: url("/fonts/HarmonyOS_Sans_Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HarmonyOS Sans";
+  src: url("/fonts/HarmonyOS_Sans_Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "HarmonyOS Sans", "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+
+  /* VirtuSoul brand — light */
+  --color-vs-3: #f2ffc1;
+  --color-vs-7: #d5f773;
+  --color-vs-9: #c4f042;
+  --color-vs-10: #769d00;
+  --color-vs-11: #374f00;
+
+  /* VirtuSoul brand — dark */
+  --color-vsd-1: #142100;
+  --color-vsd-3: #374f00;
+  --color-vsd-7: #8fb81b;
+  --color-vsd-8: #a9d42f;
+  --color-vsd-9: #c4f042;
+  --color-vsd-11: #eefbbe;
+}
+
+:root {
+  --background: #fff;
+  --foreground: #0a0a0a;
+  --card: #fff;
+  --card-foreground: #0a0a0a;
+  --muted: #f5f5f5;
+  --muted-foreground: #737373;
+  --primary: #769d00;
+  --primary-foreground: #fff;
+  --border: #e5e5e5;
+  --ring: #769d00;
+  --destructive: #ef4444;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+  --card: #171717;
+  --card-foreground: #fafafa;
+  --muted: #262626;
+  --muted-foreground: #a3a3a3;
+  --primary: #c4f042;
+  --primary-foreground: #0a0a0a;
+  --border: #262626;
+  --ring: #c4f042;
+  --destructive: #ef4444;
+}

@@ -1,0 +1,48 @@
+services:
+  app:
+    build: .
+    network_mode: host  # Required to reach OpenClaw on localhost:18789
+    environment:
+      - DATABASE_URL=postgresql://studio:studio@localhost:5432/openclaw_studio
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-changeme}
+      - SESSION_SECRET=${SESSION_SECRET:-replace-with-random-64-char-string}
+      - GATEWAY_URL=${GATEWAY_URL:-ws://localhost:18789}
+      - GATEWAY_AUTH_TOKEN=${GATEWAY_AUTH_TOKEN:-}
+      - API_PORT=5181
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: studio
+      POSTGRES_PASSWORD: studio
+      POSTGRES_DB: openclaw_studio
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U studio -d openclaw_studio"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+    environment:
+      - DOMAIN=${DOMAIN:-localhost}
+    profiles:
+      - ssl
+
+volumes:
+  pgdata:
+  caddy_data:
